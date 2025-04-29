@@ -4,6 +4,9 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="a591Vtas241stESbSMHv-19" value="&lt;h4&gt;Video Search Keyword&lt;/h4&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1295" y="615" width="150" height="60" as="geometry" />
+        </mxCell>
         <mxCell id="a591Vtas241stESbSMHv-66" value="&lt;h4&gt;Human Speech Command&lt;/h4&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-190" y="530" width="170" height="60" as="geometry" />
         </mxCell>
@@ -43,7 +46,7 @@
           <mxGeometry x="1730" y="-22" width="320" height="225" as="geometry" />
         </mxCell>
         <mxCell id="_DX33EU-IOQj22-FRPUu-2" value="MCP Server(Custom)" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
-          <mxGeometry x="970" y="410" width="280" height="190" as="geometry" />
+          <mxGeometry x="970" y="400" width="390" height="200" as="geometry" />
         </mxCell>
         <mxCell id="_DX33EU-IOQj22-FRPUu-3" value="OpenAI Whisper Server" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="10" y="664" width="270" height="160" as="geometry" />
@@ -264,13 +267,13 @@
           <mxGeometry x="960" y="660" width="680" height="240" as="geometry" />
         </mxCell>
         <mxCell id="_DX33EU-IOQj22-FRPUu-121" value="Google Youtube Server" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
-          <mxGeometry x="1330" y="390" width="330" height="220" as="geometry" />
+          <mxGeometry x="1470" y="370" width="330" height="220" as="geometry" />
         </mxCell>
         <mxCell id="a591Vtas241stESbSMHv-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="a591Vtas241stESbSMHv-15" target="a591Vtas241stESbSMHv-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="_DX33EU-IOQj22-FRPUu-123" value="Youtube Play MCP Server" style="shape=component;align=left;spacingLeft=36;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;html=1;" parent="1" vertex="1">
-          <mxGeometry x="990" y="520" width="180" height="60" as="geometry" />
+        <mxCell id="_DX33EU-IOQj22-FRPUu-123" value="Youtube Search&amp;amp;Play MCP Server" style="shape=component;align=left;spacingLeft=36;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;html=1;" parent="1" vertex="1">
+          <mxGeometry x="990" y="520" width="260" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_DX33EU-IOQj22-FRPUu-127" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="460" y="300" width="20" height="20" as="geometry" />
@@ -333,20 +336,30 @@
         <mxCell id="a591Vtas241stESbSMHv-12" value="Mail Server Access Account Approving Component" style="shape=component;align=left;spacingLeft=36;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;html=1;" vertex="1" parent="1">
           <mxGeometry x="1010" y="705" width="390" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="a591Vtas241stESbSMHv-13" value="Youtube Video Search Engine" style="shape=component;align=left;spacingLeft=36;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1390" y="480" width="220" height="60" as="geometry" />
+        <mxCell id="a591Vtas241stESbSMHv-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="a591Vtas241stESbSMHv-106" target="_DX33EU-IOQj22-FRPUu-123">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="320" />
+              <mxPoint x="940" y="538" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="a591Vtas241stESbSMHv-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="_DX33EU-IOQj22-FRPUu-123" target="a591Vtas241stESbSMHv-15">
+        <mxCell id="a591Vtas241stESbSMHv-13" value="Youtube Video Search Engine" style="shape=component;align=left;spacingLeft=36;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="460" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a591Vtas241stESbSMHv-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="_DX33EU-IOQj22-FRPUu-123" target="a591Vtas241stESbSMHv-15">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1150" y="550" as="sourcePoint" />
             <mxPoint x="1390" y="522" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="950" y="562" />
+              <mxPoint x="950" y="630" />
+              <mxPoint x="1360" y="630" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="a591Vtas241stESbSMHv-15" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
-          <mxGeometry x="1290" y="525" width="20" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="a591Vtas241stESbSMHv-19" value="Video Search Query Keyword" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="1210" y="495" width="180" height="30" as="geometry" />
+          <mxGeometry x="1360" y="615" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="a591Vtas241stESbSMHv-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="_DX33EU-IOQj22-FRPUu-15" target="a591Vtas241stESbSMHv-20">
           <mxGeometry relative="1" as="geometry">
@@ -359,7 +372,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="a591Vtas241stESbSMHv-20" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
-          <mxGeometry x="1160" y="620" width="20" height="20" as="geometry" />
+          <mxGeometry x="1390" y="514" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="a591Vtas241stESbSMHv-26" value="Sending Target" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1180" y="615" width="100" height="30" as="geometry" />
@@ -529,6 +542,21 @@
         </mxCell>
         <mxCell id="a591Vtas241stESbSMHv-103" value="&lt;h4 style=&quot;padding-bottom: 5px;&quot;&gt;Email Sender Agent&lt;/h4&gt;" style="shape=component;align=left;spacingLeft=36;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;html=1;" vertex="1" parent="1">
           <mxGeometry x="1107.5" y="10" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a591Vtas241stESbSMHv-107" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="a591Vtas241stESbSMHv-13" target="a591Vtas241stESbSMHv-106">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1530" y="478" as="sourcePoint" />
+            <mxPoint x="990" y="538" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1530" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a591Vtas241stESbSMHv-106" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1317.5" y="310" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="a591Vtas241stESbSMHv-108" value="&lt;h4&gt;Video Search Result&lt;/h4&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1257.5" y="310" width="140" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
