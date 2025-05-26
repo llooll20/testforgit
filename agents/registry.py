@@ -1,11 +1,13 @@
 from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
-from model_clients import model_client03, model_client04
+from agents.model_clients import model_client03, model_client04
+from tools import *
 
 user_proxy = UserProxyAgent(name="user_proxy")
 
 # Intent 분석기
 intent_classifier = AssistantAgent(
     name="intent_classifier",
+    model_client=model_client04,
     system_message=(
         "You are an intent classification agent. "
         "Given a Korean user prompt, respond with one of: 'play', 'open', or 'unknown'. "
@@ -30,7 +32,7 @@ planner = AssistantAgent(
 youtube_searcher = AssistantAgent(
     name="youtube_searcher",
     model_client=model_client03,
-    # tools=,
+    tools=[youtube_tools.search_youtube_tool],
     system_message=(
         "You are a youtube video searcher. Call Youtube MCP server's searchVideos function and receive the result of the search. "
         "Extract the top result, which is the first value of the videoIDs list data. Then hand over that data to the next assistant"
@@ -42,6 +44,8 @@ code_generator_youtube_play = AssistantAgent(
     model_client=model_client04,
     system_message=(
         "You are a Python code generator. Generate Python code to open a YouTube video, based on the collected videoID data "
-        "using `webbrowser.open`, and the open target url is 'https://www.youtube.com/' + videoID. Output ONLY Python code, no explanations."
+        "using `webbrowser.open`, and the open target url is 'https://www.youtube.com/' + videoID. "
+        "Output ONLY the Python code string, which includes escapes so it can be just pasted to an empty python file and be implemented without dividing by lines. "
+        "And after outputting the code data, terminate the conversation.terminate the conversation."
     ),
 )
