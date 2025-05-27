@@ -1,20 +1,24 @@
-from agents.registry import intent_classifier, intent_user_proxy
+import asyncio
+from agents.registry import intent_classifier
+
+from autogen_agentchat.messages import TextMessage
+from autogen_core import CancellationToken
 
 
 async def classify_intent(prompt: str) -> str:
-    # Reset to ensure clean state
-    intent_classifier.reset()
-    intent_user_proxy.reset()
-
-    # Run classification dialogue
-    intent_user_proxy.initiate_chat(
-        recipient=intent_classifier,
-        message=prompt,
-    )
-
-    # Receiving result from the classifier
-    # Only 'play', 'open', … intent for the return state.
-    final_message = intent_classifier.chat_messages[-1]["content"].strip().lower()
-    # return final_message if final_message in {"play", "open"} else "unknown"
-    return final_message if final_message in {"play"} else "unknown"
-
+    cancellation_token = CancellationToken()
+    try:
+        response = await asyncio.wait_for(
+            intent_classifier.on_messages(
+                messages=[TextMessage(content=prompt, source="user")],
+                cancellation_token=cancellation_token,
+            ),
+            timeout=10.0,
+        )
+        reply = response.chat_message.content.strip().lower()
+        return reply if reply in {"play", "open"} else "unknown"
+    except asyncio.TimeoutError:
+        return "unknown"
+    except Exception as e:
+        print(f"Error during intent classification: {e}")
+        return "unknown"
