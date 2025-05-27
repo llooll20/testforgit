@@ -8,11 +8,11 @@ user_proxy = UserProxyAgent(name="user_proxy")
 intent_classifier = AssistantAgent(
     name="IntentClassifierAgent",
     model_client=model_client04,
-    system_message=(
-        "You are an intent classification agent. "
-        "Given a Korean user prompt, respond with one of: 'play', 'open', or 'unknown'. "
-        "Respond with ONLY the word."
-    ),
+    system_message="""
+        You are an intent classification agent. 
+        Given a Korean user prompt, respond with one of: 'play', 'open', or 'unknown'.
+        Respond with ONLY the word.
+        """,
 )
 
 intent_user_proxy = UserProxyAgent(name="intent_user_proxy")
@@ -32,13 +32,29 @@ play_planner = AssistantAgent(
     """,
 )
 
-#
+# planning agent(계획자) for open
+open_planner = AssistantAgent(
+    name="BrowserWebSiteOpenPlannerAgent",
+    model_client=model_client03,
+    system_message="""
+        You are a planner that understands user intent and coordinates task execution. 
+        Break down user goals into actionable steps and forward them to the correct assistant. 
+        You should plan like this.
+        First, find out a suggestion website url related to user's prompt.
+        And after that, the CodeGeneratorAgent's generation of the code is the last task of this groupchat.
+        So let the CodeGeneratorAgent generate python code string with that url.
+    """,
+)
+
+# Play Process Agents
 youtube_searcher = AssistantAgent(
     name="YoutubeSearchAgent",
     model_client=model_client03,
     tools=[youtube_tools.search_youtube_tool],
     system_message=(
-        "You are a youtube video searcher. Call Youtube MCP server's searchVideos function and receive the result of the search. "
+        """
+        You are a youtube video searcher. Call Youtube MCP server's searchVideos function and receive the result of the search.
+        """
     ),
 )
 
@@ -57,6 +73,17 @@ videoId_extractor = AssistantAgent(
     ),
 )
 
+# Open Process Agents
+url_searcher = AssistantAgent(
+    name="SuggestionWebsiteUrlSearchAgent",
+    model_client=model_client03,
+    system_message="""
+    You are a url searcher.
+    Find a suggestible website url for user's prompt.
+    Leave only the most suggestible one and your job is that.
+    """,
+)
+
 code_generator_youtube_play = AssistantAgent(
     name="CodeGeneratorAgent",
     model_client=model_client04,
@@ -66,5 +93,16 @@ code_generator_youtube_play = AssistantAgent(
         Output ONLY the Python code string, which includes escapes so it can be just pasted to an empty python file and be implemented without dividing by lines. 
         Don't write any message except for code string, let that the last message of you.And after outputting the code data, end with "#CommandDone".
         
+        """,
+)
+
+code_generator_browser_website_open = AssistantAgent(
+    name="CodeGeneratorAgent",
+    model_client=model_client04,
+    system_message="""
+        You are a Python code generator. Generate Python code to open a website url, based on the collected url.
+        using `webbrowser.open`, and the open target url is the suggested url. "
+        Output ONLY the Python code string, which includes escapes so it can be just pasted to an empty python file and be implemented without dividing by lines. 
+        Don't write any message except for code string, let that the last message of you.And after outputting the code data, end with "#CommandDone".
         """,
 )
