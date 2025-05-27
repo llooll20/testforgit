@@ -4,6 +4,7 @@ from agents.intent import classify_intent
 from agents.groupchat import intent_to_groupchat
 from autogen_agentchat.ui import Console
 
+
 def extract_final_answer(task_result):
     code_candidates = []
 
@@ -20,7 +21,9 @@ def extract_final_answer(task_result):
     # Return the last collected pure code block (if any)
     return code_candidates[-1] if code_candidates else ""
 
+
 app = FastAPI()
+
 
 @app.post("/execute")
 async def execute_prompt(request: Request):
@@ -37,10 +40,12 @@ async def execute_prompt(request: Request):
 
     team = intent_to_groupchat.get(intent)
     if not team:
-        return JSONResponse(content={"error": "No groupchat found for intent"}, status_code=500)
+        return JSONResponse(
+            content={"error": "No groupchat found for intent"}, status_code=500
+        )
 
     task_result = await Console(team.run_stream(task=prompt))
     code = extract_final_answer(task_result)
-    print(f'Final Command Code', {code})
+    print(f"Final Command Code", {code})
 
     return JSONResponse(content={"code": code})
